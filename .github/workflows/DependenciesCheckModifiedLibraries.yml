@@ -24,7 +24,7 @@ jobs:
       - name: Detect LabVIEW
         shell: powershell
         run: |
-          python .scripts\src\scripts\detect_labview.py
+          python .\scripts\src\scripts\detect_labview.py
 
       - name: Generate changed files list and changed libraries list
         shell: powershell

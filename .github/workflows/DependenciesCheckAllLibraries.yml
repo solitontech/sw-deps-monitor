@@ -30,7 +30,7 @@ jobs:
       - name: Detect LabVIEW
         shell: powershell
         run: |
-          python .scripts\src\scripts\detect_labview.py
+          python .\scripts\src\scripts\detect_labview.py
 
       - name: Unexpected Dependencies Check
         shell: powershell
