@@ -21,6 +21,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
+      - name: Detect LabVIEW
+        shell: powershell
+        run: |
+          python "C:\HariharanAru\sw-deps-monitor\scripts\src\scripts\detect_labview.py"
+
       - name: Generate changed files list and changed libraries list
         shell: powershell
         run: |
@@ -39,5 +44,5 @@ jobs:
           PR_HEAD: ${{ github.event.pull_request.head.ref }}
         # True argument in the gcli command args represents Checking Only Modified Libraries
         run: |
-          g-cli -v --lv-ver 2023 --arch 32 "${{github.workspace}}\CICD\AutomatedChecks\IsLinkedToLibrary.vi" -- "${{github.workspace}}" "True"
-
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\IsLinkedToLibrary.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "True"

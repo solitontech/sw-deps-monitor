@@ -21,6 +21,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
 
+      - name: Detect LabVIEW
+        shell: powershell
+        run: |
+          python "C:\HariharanAru\sw-deps-monitor\scripts\src\scripts\detect_labview.py"
+
       - name: Generate changed files list and changed libraries list
         shell: powershell
         run: |
@@ -39,7 +44,8 @@ jobs:
           PR_HEAD: ${{ github.event.pull_request.head.ref }}
         # True argument in the gcli command args represents Checking Only Modified Libraries
         run: |
-          g-cli -v --lv-ver 2023 --arch 32 "${{github.workspace}}\CICD\AutomatedChecks\UnexpectedDepsCheck.vi" -- "${{github.workspace}}" "True"
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\UnexpectedDepsCheck.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "True"
 
       - name: Update Actual Deps List and Circular Dependencies Check
         shell: powershell
@@ -51,7 +57,8 @@ jobs:
         # Update the Actual Deps list for modified libraries and then perform circular dependencies check. 
         # True argument in the gcli command args represents Update only for Modified Libraries
         run: |
-          g-cli -v --lv-ver 2023 --arch 32 "${{github.workspace}}\CICD\AutomatedChecks\UpdateActualDepsList.vi" -- "${{github.workspace}}" "True"
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\UpdateActualDepsList.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "True"
           cd ${{ github.workspace }}\scripts
           uv sync
           cd ${{ github.workspace }}\

@@ -27,13 +27,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Detect LabVIEW
+        shell: powershell
+        run: |
+          python "C:\HariharanAru\sw-deps-monitor\scripts\src\scripts\detect_labview.py"
+
       - name: Unexpected Dependencies Check
         shell: powershell
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # False argument in the gcli command args represents Checking All Libraries
         run: |
-          g-cli -v --lv-ver 2023 --arch 32 "${{github.workspace}}\CICD\AutomatedChecks\UnexpectedDepsCheck.vi" -- "${{github.workspace}}" "False"
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\UnexpectedDepsCheck.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "False"
 
       - name: Update Actual Deps List and Circular Dependencies Check
         shell: powershell
@@ -42,7 +48,9 @@ jobs:
         # Update the Actual Deps list for all libraries and then perform circular dependencies check.
         # False argument in the gcli command args represents Update for All Libraries
         run: |
-          g-cli -v --lv-ver 2023 --arch 32 "${{github.workspace}}\CICD\AutomatedChecks\UpdateActualDepsList.vi" -- "${{github.workspace}}" "False"
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\UpdateActualDepsList.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "False"
+
           cd ${{ github.workspace }}\scripts
           uv sync
           cd ${{ github.workspace }}
@@ -61,3 +69,4 @@ jobs:
           cd ${{ github.workspace }}
           scripts\.venv\Scripts\activate
           uv run python -u ${{github.workspace}}\scripts\src\scripts\create_pr_for_deps.py --workspace "${{ github.workspace }}" --deps-file-path "Source\ActualDependencies\ActualDepsList.adeps" --base-branch "${{ github.ref_name }}"
+          
