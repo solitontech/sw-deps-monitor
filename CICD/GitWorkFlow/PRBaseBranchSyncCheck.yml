@@ -1,0 +1,47 @@
+name: PR Base Branch Sync Check
+
+# This workflow checks if the PR branch is up-to-date with the base branch when the 'RunCI' label is added. 
+# If the PR branch is behind, it will fail and prompt the contributor to update their branch before running CI.
+
+on:
+  pull_request:
+    # Only listen for label changes on PRs
+    types: [labeled]
+
+permissions:
+  contents: read
+
+jobs:
+  PRBaseBranchSyncCheck:
+    # Only run when the added label is exactly 'RunCI'
+    if: ${{ github.event.label.name == 'RunCI' }}
+    runs-on: [ci-pc]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Checkout the PR head, not the merge commit
+          ref: ${{ github.event.pull_request.head.ref }}
+          # Fetch all history for all branches to be able to compare
+          fetch-depth: 0
+
+      - name: Check if PR branch is up-to-date with base branch
+        shell: powershell
+        run: |
+          $base_ref = "origin/${{ github.event.pull_request.base.ref }}"
+          $head_ref = "HEAD" # We checked out the PR head ref
+          
+          # Check if the base branch commit is an ancestor of the PR branch head.
+          # If it's not, the PR branch is out of date. `git merge-base` returns a non-zero exit code on failure.
+          git merge-base --is-ancestor $base_ref $head_ref
+          
+          if ($LASTEXITCODE -ne 0) {
+            # For a more helpful error message, count how many commits the branch is behind.
+            $commits_behind = (git rev-list --count "${head_ref}..${base_ref}").Trim()
+            Write-Host "##[error]PR branch is not up-to-date with the base branch ('${{ github.event.pull_request.base.ref }}'). It is $commits_behind commit(s) behind."
+            Write-Host "##[error]Please merge or rebase the latest changes from '${{ github.event.pull_request.base.ref }}' into your branch before requesting 'RunCI'."
+            exit 1
+          } else {
+            Write-Host "Success: The PR branch is up-to-date with the base branch."
+          }

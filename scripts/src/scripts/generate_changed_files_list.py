@@ -290,15 +290,28 @@ def generate_inscope_changed_lvlibs_list(repo_path: str) -> list[str]:
     
     # g-cli -v --lv-ver 2023 --arch 32 "E:\sw-deps-monitor\CICD\CheckModifiedVIs\GenerateChangedLibrariesList.vi" -- "E:\sw-deps-monitor"
 
+    lv_path = os.environ.get("LV_PATH")
+    if not lv_path:
+        raise EnvironmentError("LV_PATH not set in environment")
+
+    vi_path = os.path.join(
+        lv_path,
+        "vi.lib",
+        "DepsWatch",
+        "CICD",
+        "CheckModifiedVIs",
+        "GenerateChangedLibrariesList.vi"
+    )
+    
     gcli_args = [
         "g-cli",
         "-v",
         "--lv-ver", LV_Version,
         "--arch", LV_Bitness,
-        os.path.join(repo_path, r"CICD\CheckModifiedVIs\GenerateChangedLibrariesList.vi"),
+        vi_path,
         "--",
         repo_path
-    ]
+    ] 
     rc, out, err = run(gcli_args)
     if rc != 0:
         raise RuntimeError(f"g-cli call to GenerateChangedLibrariesList.vi failed: {err}")

@@ -1,0 +1,78 @@
+name: Expected Dependencies Check For Modified Libraries
+
+on:
+  pull_request:
+    # Only listen for label changes on PRs
+    types: [labeled]
+
+permissions:
+  contents: write
+
+jobs:
+  DependenciesCheckModifiedLibraries:
+    # Only run when the added label is exactly 'RunCI'
+    if: ${{ github.event.label.name == 'RunCI' }}
+    runs-on: [ci-pc]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Detect LabVIEW
+        shell: powershell
+        run: |
+          python .\scripts\src\scripts\detect_labview.py
+
+      - name: Generate changed files list and changed libraries list
+        shell: powershell
+        run: |
+          cd ${{ github.workspace }}\scripts
+          uv sync
+          cd ${{ github.workspace }}\
+          scripts\.venv\Scripts\activate
+          uv run python -u ${{github.workspace}}\scripts\src\scripts\generate_changed_files_list.py --workspace_root "${{ github.workspace }}" --base_branch "origin/${{ github.event.pull_request.base.ref }}" --head_branch "HEAD"
+
+      - name: Unexpected Dependencies Check
+        shell: powershell
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BASE: ${{ github.event.pull_request.base.ref }}
+          PR_HEAD: ${{ github.event.pull_request.head.ref }}
+        # True argument in the gcli command args represents Checking Only Modified Libraries
+        run: |
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\UnexpectedDepsCheck.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "True"
+
+      - name: Update Actual Deps List and Circular Dependencies Check
+        shell: powershell
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_BASE: ${{ github.event.pull_request.base.ref }}
+          PR_HEAD: ${{ github.event.pull_request.head.ref }}
+        # Update the Actual Deps list for modified libraries and then perform circular dependencies check. 
+        # True argument in the gcli command args represents Update only for Modified Libraries
+        run: |
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\UpdateActualDepsList.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "True"
+          cd ${{ github.workspace }}\scripts
+          uv sync
+          cd ${{ github.workspace }}\
+          scripts\.venv\Scripts\activate
+          uv run python -u ${{github.workspace}}\scripts\src\scripts\sort_actual_deps_list.py "${{ github.workspace }}\Source\ActualDependencies"
+          uv run python -u ${{github.workspace}}\scripts\src\scripts\find_circular_paths.py --folder "${{ github.workspace }}\Source\ActualDependencies"
+
+      - name: Commit dependency updates if needed
+        shell: powershell
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd ${{ github.workspace }}\scripts
+          uv sync
+          cd ${{ github.workspace }}
+          scripts\.venv\Scripts\activate
+          uv run python -u ${{github.workspace}}\scripts\src\scripts\commit_adeps_changes.py --workspace "${{ github.workspace }}" --deps-file-path "Source\ActualDependencies\ActualDepsList.adeps" --branch "${{ github.event.pull_request.head.ref }}"
