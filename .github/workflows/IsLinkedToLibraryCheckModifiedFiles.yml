@@ -24,7 +24,7 @@ jobs:
       - name: Detect LabVIEW
         shell: powershell
         run: |
-          python "C:\HariharanAru\sw-deps-monitor\scripts\src\scripts\detect_labview.py"
+          python .scripts\src\scripts\detect_labview.py
 
       - name: Generate changed files list and changed libraries list
         shell: powershell
@@ -37,11 +37,6 @@ jobs:
 
       - name: Check If Files are associated with a Library
         shell: powershell
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          PR_BASE: ${{ github.event.pull_request.base.ref }}
-          PR_HEAD: ${{ github.event.pull_request.head.ref }}
         # True argument in the gcli command args represents Checking Only Modified Libraries
         run: |
           $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\IsLinkedToLibrary.vi"

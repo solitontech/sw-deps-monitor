@@ -30,12 +30,10 @@ jobs:
       - name: Detect LabVIEW
         shell: powershell
         run: |
-          python "C:\HariharanAru\sw-deps-monitor\scripts\src\scripts\detect_labview.py"
+          python .scripts\src\scripts\detect_labview.py
 
       - name: Unexpected Dependencies Check
         shell: powershell
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # False argument in the gcli command args represents Checking All Libraries
         run: |
           $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\UnexpectedDepsCheck.vi"
@@ -43,8 +41,6 @@ jobs:
 
       - name: Update Actual Deps List and Circular Dependencies Check
         shell: powershell
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Update the Actual Deps list for all libraries and then perform circular dependencies check.
         # False argument in the gcli command args represents Update for All Libraries
         run: |
@@ -62,7 +58,6 @@ jobs:
         shell: powershell
         env:
           GITHUB_TOKEN: ${{ secrets.DEPS_MON_TOKEN }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
         run: |
           cd ${{ github.workspace }}\scripts
           uv sync
