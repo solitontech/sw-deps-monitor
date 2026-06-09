@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-06-08 18:59:18" Modified_Date="2026-06-09 12:30:29" Creator="hariharan.arumugam" Comments="" ID="1cc437a84ea495d5c7436dbe85a5ff9e">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-06-08 18:59:18" Modified_Date="2026-06-09 17:22:45" Creator="hariharan.arumugam" Comments="" ID="902fc311969b65382792788a412252e1">
   <Library_General_Settings>
-    <Package_File_Name>DepsWatch_lib_CICD</Package_File_Name>
-    <Library_Version>0.1.0.9</Library_Version>
+    <Package_File_Name>DepsWatch</Package_File_Name>
+    <Library_Version>0.1.0.12</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>Source</Library_Source_Folder>
     <Library_Output_Folder>..\Builds</Library_Output_Folder>
@@ -17,6 +17,7 @@
   </Library_General_Settings>
   <Advanced_Settings>
     <Package_Dependencies>
+      <Additional_External_Dependencies>depswatchscripts &gt;=1.0.0.3</Additional_External_Dependencies>
       <Additional_External_Dependencies>jdp_science_jsontext &gt;=1.9.1.125</Additional_External_Dependencies>
       <Additional_External_Dependencies>soliton_technologies_lib_sll_toolkit &gt;=1.1.0.3</Additional_External_Dependencies>
       <Additional_External_Dependencies>wiresmith_technology_lib_g_cli &gt;=3.0.1.98</Additional_External_Dependencies>
@@ -105,12 +106,6 @@ APIs available in &lt;b&gt; Functions Palette -&gt; Addons -&gt; DepsWatch &lt;<
         <Preserve_Hierarchy>true</Preserve_Hierarchy>
         <Path>&lt;application&gt;</Path>
       </Additional_Destination>
-      <Additional_Destination>
-        <Name>DepsWatch_ProgramData</Name>
-        <LLB>false</LLB>
-        <Preserve_Hierarchy>true</Preserve_Hierarchy>
-        <Path>&lt;OS Public Application Data&gt;\DepsWatch</Path>
-      </Additional_Destination>
     </Destinations>
     <Source_Files>
       <Destination_Overrides>
@@ -130,12 +125,6 @@ APIs available in &lt;b&gt; Functions Palette -&gt; Addons -&gt; DepsWatch &lt;<
         <Destination>7</Destination>
         <Additional_Destination>false</Additional_Destination>
         <Additional_Destination_Index>0</Additional_Destination_Index>
-      </Destination_Overrides>
-      <Destination_Overrides>
-        <Path>scripts</Path>
-        <Destination>0</Destination>
-        <Additional_Destination>true</Additional_Destination>
-        <Additional_Destination_Index>1</Additional_Destination_Index>
       </Destination_Overrides>
       <Password_Overrides>
         <Path>.</Path>
@@ -250,7 +239,7 @@ APIs available in &lt;b&gt; Functions Palette -&gt; Addons -&gt; DepsWatch &lt;<
         <Path>Source\project\DepsWatch</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>060F3B388EC0A9DA36BCD732B18FB01F</GUID>
+      <GUID>3EB990F782F6C04920044827ED4A72E6</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -313,7 +302,7 @@ APIs available in &lt;b&gt; Functions Palette -&gt; Addons -&gt; DepsWatch &lt;<
         <Path>Source\project\DepsWatch\InitializeExpDepsFilesWithActualDeps.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>EA275337208102DAB609828205A5F7D9</GUID>
+      <GUID>1A03720A2C3BB730F2135B223494EECA</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
