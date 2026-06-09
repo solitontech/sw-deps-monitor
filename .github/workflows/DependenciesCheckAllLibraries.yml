@@ -21,6 +21,10 @@ jobs:
   DependenciesCheckAllLibraries:
     runs-on: [ci-pc]
 
+    # Define the base path environment variable
+    env:
+      LV_PYTHON_SCRIPTS_PATH: 'C:\ProgramData\DepsWatch'
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,7 +34,7 @@ jobs:
       - name: Detect LabVIEW
         shell: powershell
         run: |
-          python .\scripts\src\scripts\detect_labview.py
+          python "${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\detect_labview.py"
 
       - name: Unexpected Dependencies Check
         shell: powershell
@@ -51,8 +55,8 @@ jobs:
           uv sync
           cd ${{ github.workspace }}
           scripts\.venv\Scripts\activate
-          uv run python -u ${{github.workspace}}\scripts\src\scripts\sort_actual_deps_list.py "${{ github.workspace }}\Source\ActualDependencies"
-          uv run python -u ${{github.workspace}}\scripts\src\scripts\find_circular_paths.py --folder "${{ github.workspace }}\Source\ActualDependencies"
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\sort_actual_deps_list.py "${{ github.workspace }}\Source\ActualDependencies"
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\find_circular_paths.py --folder "${{ github.workspace }}\Source\ActualDependencies"
 
       - name: Create PR for ActualDepsList.adeps dependency updates if needed
         shell: powershell
@@ -63,5 +67,5 @@ jobs:
           uv sync
           cd ${{ github.workspace }}
           scripts\.venv\Scripts\activate
-          uv run python -u ${{github.workspace}}\scripts\src\scripts\create_pr_for_deps.py --workspace "${{ github.workspace }}" --deps-file-path "Source\ActualDependencies\ActualDepsList.adeps" --base-branch "${{ github.ref_name }}"
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\create_pr_for_deps.py --workspace "${{ github.workspace }}" --deps-file-path "Source\ActualDependencies\ActualDepsList.adeps" --base-branch "${{ github.ref_name }}"
           

@@ -23,7 +23,7 @@ selected_lv = None
 bitness = None
 
 for lv in labviews:
-    cicd_folder = lv / "vi.lib" / "DepsWatch" / "CICD"
+    cicd_folder = lv / "vi.lib" / "DepsWatch"
     
     if cicd_folder.exists():
         selected_lv = lv
@@ -31,7 +31,7 @@ for lv in labviews:
         break
 
 if selected_lv is None:
-    print("ERROR: DepsWatch CICD package not found in any LabVIEW installation.")
+    print("ERROR: DepsWatch package not found in any LabVIEW installation.")
     sys.exit(1)
 
 lv_version = selected_lv.name.replace("LabVIEW ", "")

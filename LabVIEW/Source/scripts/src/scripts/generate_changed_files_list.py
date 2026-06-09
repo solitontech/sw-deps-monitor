@@ -298,7 +298,6 @@ def generate_inscope_changed_lvlibs_list(repo_path: str) -> list[str]:
         lv_path,
         "vi.lib",
         "DepsWatch",
-        "CICD",
         "CheckModifiedVIs",
         "GenerateChangedLibrariesList.vi"
     )
