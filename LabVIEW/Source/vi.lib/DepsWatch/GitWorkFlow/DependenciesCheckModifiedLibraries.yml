@@ -33,9 +33,9 @@ jobs:
       - name: Generate changed files list and changed libraries list
         shell: powershell
         run: |
-          cd ${{ github.workspace }}\scripts
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts
           uv sync
-          cd ${{ github.workspace }}\
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}\
           scripts\.venv\Scripts\activate
           uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\generate_changed_files_list.py --workspace_root "${{ github.workspace }}" --base_branch "origin/${{ github.event.pull_request.base.ref }}" --head_branch "HEAD"
 
@@ -53,9 +53,9 @@ jobs:
         run: |
           $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\UpdateActualDepsList.vi"
           g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "True"
-          cd ${{ github.workspace }}\scripts
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts
           uv sync
-          cd ${{ github.workspace }}\
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}\
           scripts\.venv\Scripts\activate
           uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\sort_actual_deps_list.py "${{ github.workspace }}\Source\ActualDependencies"
           uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\find_circular_paths.py --folder "${{ github.workspace }}\Source\ActualDependencies"
@@ -63,8 +63,8 @@ jobs:
       - name: Commit dependency updates if needed
         shell: powershell
         run: |
-          cd ${{ github.workspace }}\scripts
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts
           uv sync
-          cd ${{ github.workspace }}
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}
           scripts\.venv\Scripts\activate
           uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\commit_adeps_changes.py --workspace "${{ github.workspace }}" --deps-file-path "Source\ActualDependencies\ActualDepsList.adeps" --branch "${{ github.event.pull_request.head.ref }}"

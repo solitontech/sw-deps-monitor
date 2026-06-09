@@ -51,9 +51,9 @@ jobs:
           $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\UpdateActualDepsList.vi"
           g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "False"
 
-          cd ${{ github.workspace }}\scripts
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts
           uv sync
-          cd ${{ github.workspace }}
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}
           scripts\.venv\Scripts\activate
           uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\sort_actual_deps_list.py "${{ github.workspace }}\Source\ActualDependencies"
           uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\find_circular_paths.py --folder "${{ github.workspace }}\Source\ActualDependencies"
@@ -63,9 +63,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DEPS_MON_TOKEN }}
         run: |
-          cd ${{ github.workspace }}\scripts
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts
           uv sync
-          cd ${{ github.workspace }}
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}
           scripts\.venv\Scripts\activate
           uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\create_pr_for_deps.py --workspace "${{ github.workspace }}" --deps-file-path "Source\ActualDependencies\ActualDepsList.adeps" --base-branch "${{ github.ref_name }}"
           
