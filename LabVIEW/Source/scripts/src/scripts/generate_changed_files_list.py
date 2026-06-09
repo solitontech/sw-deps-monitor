@@ -28,9 +28,6 @@ changed_files_list_path = os.path.normpath(r"CICD\Temp\CheckModifiedLVFiles\chan
 changed_lvfiles_list_path = os.path.normpath(r"CICD\Temp\CheckModifiedLVFiles\changed_lvfiles.txt")
 in_scope_changed_lvfiles_path = os.path.normpath(r"CICD\Temp\CheckModifiedLVFiles\in_scope_changed_lvfiles.txt")
 in_scope_changed_lvlibs_path = os.path.normpath(r"CICD\Temp\CheckModifiedLVFiles\in_scope_changed_lvlibs.txt")
-LV_Version = "2023"
-LV_Bitness = "32"
-
 
 def load_path_configs(workspace_root: str) -> None:
     """
@@ -288,11 +285,13 @@ def generate_inscope_changed_lvlibs_list(repo_path: str) -> list[str]:
     """
     global in_scope_changed_lvlibs_path
     
-    # g-cli -v --lv-ver 2023 --arch 32 "E:\sw-deps-monitor\CICD\CheckModifiedVIs\GenerateChangedLibrariesList.vi" -- "E:\sw-deps-monitor"
+    # g-cli -v --lv-ver 2023 --arch 32 "<LabVIEW>\vi.lib\DepsWatch\CheckModifiedVIs\GenerateChangedLibrariesList.vi" -- "E:\sw-deps-monitor"
 
     lv_path = os.environ.get("LV_PATH")
     if not lv_path:
         raise EnvironmentError("LV_PATH not set in environment")
+    lv_version = os.environ.get("LV_VERSION")
+    lv_bitness = os.environ.get("LV_BITNESS")
 
     vi_path = os.path.join(
         lv_path,
@@ -305,8 +304,8 @@ def generate_inscope_changed_lvlibs_list(repo_path: str) -> list[str]:
     gcli_args = [
         "g-cli",
         "-v",
-        "--lv-ver", LV_Version,
-        "--arch", LV_Bitness,
+        "--lv-ver", lv_version,
+        "--arch", lv_bitness,
         vi_path,
         "--",
         repo_path

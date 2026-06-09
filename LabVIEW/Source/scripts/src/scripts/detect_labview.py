@@ -23,9 +23,9 @@ selected_lv = None
 bitness = None
 
 for lv in labviews:
-    cicd_folder = lv / "vi.lib" / "DepsWatch"
+    depswatch_folder = lv / "vi.lib" / "DepsWatch"
     
-    if cicd_folder.exists():
+    if depswatch_folder.exists():
         selected_lv = lv
         bitness = "32" if "Program Files (x86)" in str(lv) else "64"
         break

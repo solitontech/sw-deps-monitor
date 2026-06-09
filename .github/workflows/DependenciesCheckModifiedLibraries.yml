@@ -43,7 +43,7 @@ jobs:
         shell: powershell
         # True argument in the gcli command args represents Checking Only Modified Libraries
         run: |
-          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\UnexpectedDepsCheck.vi"
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\UnexpectedDepsCheck.vi"
           g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "True"
 
       - name: Update Actual Deps List and Circular Dependencies Check
@@ -51,7 +51,7 @@ jobs:
         # Update the Actual Deps list for modified libraries and then perform circular dependencies check. 
         # True argument in the gcli command args represents Update only for Modified Libraries
         run: |
-          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\UpdateActualDepsList.vi"
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\UpdateActualDepsList.vi"
           g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "True"
           cd ${{ github.workspace }}\scripts
           uv sync

@@ -14,6 +14,10 @@ jobs:
     if: ${{ github.event.label.name == 'RunCI' }}
     runs-on: [ci-pc]
 
+    # Define the base path environment variable
+    env:
+      LV_PYTHON_SCRIPTS_PATH: 'C:\ProgramData\DepsWatch'
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,7 +28,7 @@ jobs:
       - name: Detect LabVIEW
         shell: powershell
         run: |
-          python .\scripts\src\scripts\detect_labview.py
+          python ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\detect_labview.py
 
       - name: Generate changed files list and changed libraries list
         shell: powershell
@@ -33,11 +37,11 @@ jobs:
           uv sync
           cd ${{ github.workspace }}\
           scripts\.venv\Scripts\activate
-          uv run python -u ${{github.workspace}}\scripts\src\scripts\generate_changed_files_list.py --workspace_root "${{ github.workspace }}" --base_branch "origin/${{ github.event.pull_request.base.ref }}" --head_branch "HEAD"
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\generate_changed_files_list.py --workspace_root "${{ github.workspace }}" --base_branch "origin/${{ github.event.pull_request.base.ref }}" --head_branch "HEAD"
 
       - name: Check If Files are associated with a Library
         shell: powershell
         # True argument in the gcli command args represents Checking Only Modified Libraries
         run: |
-          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\CICD\AutomatedChecks\IsLinkedToLibrary.vi"
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\IsLinkedToLibrary.vi"
           g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "True"
