@@ -1,0 +1,71 @@
+name: Dependencies Check For All Libraries
+
+on:
+  # schedule:
+    # Runs at 18:30 UTC (12:00 AM IST) every day
+    #        ┌───────────── minute (0 - 59)
+    #        │   ┌───────────── hour (0 - 23)
+    #        │   │ ┌───────────── day of the month (1 - 31)
+    #        │   │ │ ┌───────────── month (1 - 12)
+    #        │   │ │ │ ┌───────────── day of the week (0 - 6, Sunday = 0 or 7, or use names like MON, TUE)
+    #        │   │ │ │ │
+    #        *   * * * * <command or workflow trigger>
+    # - cron: '30 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  DependenciesCheckAllLibraries:
+    runs-on: [ci-pc]
+
+    # Define the base path environment variable
+    env:
+      LV_PYTHON_SCRIPTS_PATH: 'C:\ProgramData\DepsWatch'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect LabVIEW
+        shell: powershell
+        run: |
+          python "${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\detect_labview.py"
+
+      - name: Unexpected Dependencies Check
+        shell: powershell
+        # False argument in the gcli command args represents Checking All Libraries
+        run: |
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\UnexpectedDepsCheck.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "False"
+
+      - name: Update Actual Deps List and Circular Dependencies Check
+        shell: powershell
+        # Update the Actual Deps list for all libraries and then perform circular dependencies check.
+        # False argument in the gcli command args represents Update for All Libraries
+        run: |
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\UpdateActualDepsList.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "False"
+
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts
+          uv sync
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}
+          scripts\.venv\Scripts\activate
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\sort_actual_deps_list.py "${{ github.workspace }}\Source\ActualDependencies"
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\find_circular_paths.py --folder "${{ github.workspace }}\Source\ActualDependencies"
+
+      - name: Create PR for ActualDepsList.adeps dependency updates if needed
+        shell: powershell
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPS_MON_TOKEN }}
+        run: |
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts
+          uv sync
+          cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}
+          scripts\.venv\Scripts\activate
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\create_pr_for_deps.py --workspace "${{ github.workspace }}" --deps-file-path "Source\ActualDependencies\ActualDepsList.adeps" --base-branch "${{ github.ref_name }}"
+          

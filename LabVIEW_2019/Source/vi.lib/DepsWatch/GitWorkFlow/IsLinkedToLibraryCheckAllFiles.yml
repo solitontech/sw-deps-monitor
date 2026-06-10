@@ -1,0 +1,47 @@
+name: Check If All LV Files Are Associated with Library
+
+on:
+  # schedule:
+    # Runs at 18:30 UTC (12:00 AM IST) every day
+    #        ┌───────────── minute (0 - 59)
+    #        │   ┌───────────── hour (0 - 23)
+    #        │   │ ┌───────────── day of the month (1 - 31)
+    #        │   │ │ ┌───────────── month (1 - 12)
+    #        │   │ │ │ ┌───────────── day of the week (0 - 6, Sunday = 0 or 7, or use names like MON, TUE)
+    #        │   │ │ │ │
+    #        *   * * * * <command or workflow trigger>
+    # - cron: '30 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  LibraryCheckAllFiles:
+    runs-on: [ci-pc]
+
+    # Define the base path environment variable
+    env:
+      LV_PYTHON_SCRIPTS_PATH: 'C:\ProgramData\DepsWatch'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect LabVIEW
+        shell: powershell
+        # Construct the absolute path to the script dynamically using the environment variable
+        run: |
+          python "${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\detect_labview.py"
+          
+      - name: Check If Files are associated with a Library
+        shell: powershell
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # False argument in the gcli command args represents Checking All Libraries
+        run: |
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\IsLinkedToLibrary.vi"
+          g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "False"
