@@ -35,7 +35,7 @@ jobs:
         shell: powershell
         # Construct the absolute path to the script dynamically using the environment variable
         run: |
-          python "${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\detect_labview.py"
+          python "${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\detect_labview.py" "${{ github.workspace }}"
           
       - name: Check If Files are associated with a Library
         shell: powershell

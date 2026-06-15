@@ -28,7 +28,7 @@ jobs:
       - name: Detect LabVIEW
         shell: powershell
         run: |
-          python ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\detect_labview.py
+          python ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\detect_labview.py "${{ github.workspace }}"
 
       - name: Generate changed files list and changed libraries list
         shell: powershell

@@ -22,8 +22,8 @@
 		</Item>
 		<Item Name="Utilities" Type="Folder">
 			<Item Name="ArrayUtilities.lvlib" Type="Library" URL="../Utilities/ArrayUtilities/ArrayUtilities.lvlib"/>
-			<Item Name="FileUtilities.lvlib" Type="Library" URL="../Utilities/ArrayUtilities/FileUtilities.lvlib"/>
-			<Item Name="StringUtilities.lvlib" Type="Library" URL="../Utilities/ArrayUtilities/StringUtilities.lvlib"/>
+			<Item Name="FileUtilities.lvlib" Type="Library" URL="../Utilities/FileUtilities/FileUtilities.lvlib"/>
+			<Item Name="StringUtilities.lvlib" Type="Library" URL="../Utilities/StringUtilities/StringUtilities.lvlib"/>
 		</Item>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>

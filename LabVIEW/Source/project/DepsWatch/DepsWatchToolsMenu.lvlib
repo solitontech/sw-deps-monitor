@@ -8,4 +8,5 @@
 	<Item Name="InitializeExpDepsFilesWithActualDeps.vi" Type="VI" URL="../InitializeExpDepsFilesWithActualDeps.vi"/>
 	<Item Name="CreateProjectsForEachLibrary.vi" Type="VI" URL="../CreateProjectsForEachLibrary.vi"/>
 	<Item Name="CreateWorkflowAndConfigFiles.vi" Type="VI" URL="../CreateWorkflowAndConfigFiles.vi"/>
+	<Item Name="Find Unexpected Deps.vi" Type="VI" URL="../Find Unexpected Deps.vi"/>
 </Library>
