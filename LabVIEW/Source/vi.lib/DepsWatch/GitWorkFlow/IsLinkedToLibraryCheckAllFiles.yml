@@ -43,5 +43,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # False argument in the gcli command args represents Checking All Libraries
         run: |
-          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\IsLinkedToLibrary.vi"
+          $viPath = "$env:LV_PATH\vi.lib\DepsWatch\AutomatedChecks\IsLinkedToLibraryorClass.vi"
           g-cli -v --lv-ver $env:LV_VERSION --arch $env:LV_BITNESS "$viPath" -- "${{ github.workspace }}" "False"
