@@ -70,11 +70,11 @@ selected_bitness = None
 for lv in labviews:
     lv_version = lv.name.replace("LabVIEW ", "")
     current_bitness = "32" if "Program Files (x86)" in str(lv) else "64"
-    depswatch_folder = lv / "vi.lib" / "DepsWatch"
+    hawkeye_folder = lv / "vi.lib" / "Hawkeye"
 
     # Match ALL conditions
     if (
-        depswatch_folder.exists()
+        hawkeye_folder.exists()
         and lv_version == expected_lv_version
         and current_bitness == expected_bitness
     ):
@@ -86,7 +86,7 @@ for lv in labviews:
 # Step 4: Validate selection
 # -----------------------------
 if selected_lv is None:
-    print("ERROR: No matching LabVIEW found with required version, bitness with DepsWatch.")
+    print("ERROR: No matching LabVIEW found with required version, bitness with Hawkeye.")
     sys.exit(1)
 
 lv_version = selected_lv.name.replace("LabVIEW ", "")

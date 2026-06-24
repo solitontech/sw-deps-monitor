@@ -285,7 +285,7 @@ def generate_inscope_changed_lvlibs_list(repo_path: str) -> list[str]:
     """
     global in_scope_changed_lvlibs_path
     
-    # g-cli -v --lv-ver 2023 --arch 32 "<LabVIEW>\vi.lib\DepsWatch\CheckModifiedVIs\GenerateChangedLibrariesList.vi" -- "E:\sw-deps-monitor"
+    # g-cli -v --lv-ver 2023 --arch 32 "<LabVIEW>\vi.lib\Hawkeye\CheckModifiedVIs\GenerateChangedLibrariesList.vi" -- "E:\sw-deps-monitor"
 
     lv_path = os.environ.get("LV_PATH")
     if not lv_path:
@@ -296,7 +296,7 @@ def generate_inscope_changed_lvlibs_list(repo_path: str) -> list[str]:
     vi_path = os.path.join(
         lv_path,
         "vi.lib",
-        "DepsWatch",
+        "Hawkeye",
         "CheckModifiedVIs",
         "GenerateChangedLibrariesList.vi"
     )
