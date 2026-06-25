@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-06-24 12:18:50" Modified_Date="2026-06-24 12:52:02" Creator="hariharan.arumugam" Comments="" ID="8abfbb9b34003f302754f5bc995baa4f">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-06-24 12:18:50" Modified_Date="2026-06-25 16:55:58" Creator="hariharan.arumugam" Comments="" ID="f2af720dac67198b4f07bb45deccfdda">
   <Library_General_Settings>
     <Package_File_Name>Hawkeye</Package_File_Name>
     <Library_Version>0.1.0.2</Library_Version>
@@ -226,7 +226,7 @@ APIs available in &lt;b&gt; Functions Palette -&gt; Addons -&gt; Hawkeye &lt;/b&
         <Path>Source\vi.lib\Hawkeye\AutomatedChecks</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>45952F9555F69C52313B5F65A2159555</GUID>
+      <GUID>6DAFCAD31429B0B8CA152E6DD37E14A6</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -289,7 +289,7 @@ APIs available in &lt;b&gt; Functions Palette -&gt; Addons -&gt; Hawkeye &lt;/b&
         <Path>Source\vi.lib\Hawkeye\AutomatedChecks\UpdateActualDepsList.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>F0397B9AAC27FFA7C6925B4B60D62683</GUID>
+      <GUID>E392720545645D286B52F309A057E6A7</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

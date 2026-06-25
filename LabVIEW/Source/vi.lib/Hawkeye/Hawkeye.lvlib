@@ -29,22 +29,19 @@
 		<Item Name="AddLibSectionIfMissing.vi" Type="VI" URL="../SubVIs/AddLibSectionIfMissing.vi"/>
 		<Item Name="AutoFindRepoPath.vi" Type="VI" URL="../SubVIs/AutoFindRepoPath.vi"/>
 		<Item Name="Create New Project.vi" Type="VI" URL="../SubVIs/Create New Project.vi"/>
-		<Item Name="Find Direct Dependencies.vi" Type="VI" URL="../SubVIs/Find Direct Dependencies.vi"/>
+		<Item Name="FindAllLVDepsSubVIs.vi" Type="VI" URL="../SubVIs/FindAllLVDepsSubVIs.vi"/>
 		<Item Name="FindDepsChainPath.vi" Type="VI" URL="../SubVIs/FindDepsChainPath.vi"/>
 		<Item Name="FindProjectPath.vi" Type="VI" URL="../SubVIs/FindProjectPath.vi"/>
 		<Item Name="GenericStatusIndicator.vi" Type="VI" URL="../SubVIs/GenericStatusIndicator.vi"/>
 		<Item Name="Get Repo Path.vi" Type="VI" URL="../SubVIs/Get Repo Path.vi"/>
 		<Item Name="GetAllDepsChain.vi" Type="VI" URL="../SubVIs/GetAllDepsChain.vi"/>
 		<Item Name="GetAllLVFilesForLibCheck.vi" Type="VI" URL="../SubVIs/GetAllLVFilesForLibCheck.vi"/>
-		<Item Name="GetOwnedClassList.vi" Type="VI" URL="../SubVIs/GetOwnedClassList.vi"/>
-		<Item Name="InitializeExpDepsFilesWithActualDeps.vi" Type="VI" URL="../SubVIs/InitializeExpDepsFilesWithActualDeps.vi"/>
 		<Item Name="IsUserLibVI.vi" Type="VI" URL="../SubVIs/IsUserLibVI.vi"/>
 		<Item Name="LVLibNameFromFileName.vi" Type="VI" URL="../SubVIs/LVLibNameFromFileName.vi"/>
 		<Item Name="LVLibNameFromFilePath.vi" Type="VI" URL="../SubVIs/LVLibNameFromFilePath.vi"/>
 		<Item Name="ReadChangedFileLogPaths.vi" Type="VI" URL="../SubVIs/ReadChangedFileLogPaths.vi"/>
 		<Item Name="ReadChangedLVFilesList.vi" Type="VI" URL="../SubVIs/ReadChangedLVFilesList.vi"/>
 		<Item Name="ReadExpectedDependencies.vi" Type="VI" URL="../SubVIs/ReadExpectedDependencies.vi"/>
-		<Item Name="Test VI.vi" Type="VI" URL="../SubVIs/Test VI.vi"/>
 		<Item Name="Unclaimed LVClass Check.vi" Type="VI" URL="../SubVIs/Unclaimed LVClass Check.vi"/>
 	</Item>
 	<Item Name="Typedefs" Type="Folder">
@@ -55,11 +52,9 @@
 	<Item Name="CheckOneLvlibLinked.vi" Type="VI" URL="../SubVIs/CheckOneLvlibLinked.vi"/>
 	<Item Name="CICDPathConfigLV2.vi" Type="VI" URL="../SubVIs/CICDPathConfigLV2.vi"/>
 	<Item Name="ExpectedDepsCheckResults.vi" Type="VI" URL="../SubVIs/ExpectedDepsCheckResults.vi"/>
-	<Item Name="FindAllLVDepsSubVIs.vi" Type="VI" URL="../SubVIs/FindAllLVDepsSubVIs.vi"/>
 	<Item Name="FindLibraryPath.vi" Type="VI" URL="../SubVIs/FindLibraryPath.vi"/>
 	<Item Name="FindUnexpectedDepsOfLibraries.vi" Type="VI" URL="../SubVIs/FindUnexpectedDepsOfLibraries.vi"/>
 	<Item Name="GetActualDepsListPath.vi" Type="VI" URL="../SubVIs/GetActualDepsListPath.vi"/>
-	<Item Name="GetAllDepsPath.vi" Type="VI" URL="../SubVIs/GetAllDepsPath.vi"/>
 	<Item Name="GetAllLibraries.vi" Type="VI" URL="../SubVIs/GetAllLibraries.vi"/>
 	<Item Name="GetLVQualifiedName.vi" Type="VI" URL="../SubVIs/GetLVQualifiedName.vi"/>
 	<Item Name="SortHawkeyeList.vi" Type="VI" URL="../SubVIs/SortHawkeyeList.vi"/>
