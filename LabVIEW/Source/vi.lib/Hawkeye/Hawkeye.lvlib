@@ -53,9 +53,12 @@
 	<Item Name="CICDPathConfigLV2.vi" Type="VI" URL="../SubVIs/CICDPathConfigLV2.vi"/>
 	<Item Name="ExpectedDepsCheckResults.vi" Type="VI" URL="../SubVIs/ExpectedDepsCheckResults.vi"/>
 	<Item Name="FindLibraryPath.vi" Type="VI" URL="../SubVIs/FindLibraryPath.vi"/>
+	<Item Name="FindLVLibProjectPath.vi" Type="VI" URL="../SubVIs/FindLVLibProjectPath.vi"/>
 	<Item Name="FindUnexpectedDepsOfLibraries.vi" Type="VI" URL="../SubVIs/FindUnexpectedDepsOfLibraries.vi"/>
 	<Item Name="GetActualDepsListPath.vi" Type="VI" URL="../SubVIs/GetActualDepsListPath.vi"/>
+	<Item Name="GetAllClass.vi" Type="VI" URL="../SubVIs/GetAllClass.vi"/>
 	<Item Name="GetAllLibraries.vi" Type="VI" URL="../SubVIs/GetAllLibraries.vi"/>
+	<Item Name="GetAllLVProjects.vi" Type="VI" URL="../SubVIs/GetAllLVProjects.vi"/>
 	<Item Name="GetLVQualifiedName.vi" Type="VI" URL="../SubVIs/GetLVQualifiedName.vi"/>
 	<Item Name="SortHawkeyeList.vi" Type="VI" URL="../SubVIs/SortHawkeyeList.vi"/>
 	<Item Name="UpdateActualDepsOfLibraries.vi" Type="VI" URL="../SubVIs/UpdateActualDepsOfLibraries.vi"/>
