@@ -36,6 +36,7 @@
 		<Item Name="FindProjectPath.vi" Type="VI" URL="../SubVIs/FindProjectPath.vi"/>
 		<Item Name="Generate Hawkeye File.vi" Type="VI" URL="../SubVIs/Generate Hawkeye File.vi"/>
 		<Item Name="GenericStatusIndicator.vi" Type="VI" URL="../SubVIs/GenericStatusIndicator.vi"/>
+		<Item Name="Get Callers + Cache.vi" Type="VI" URL="../Get Callers + Cache.vi"/>
 		<Item Name="Get Repo Path.vi" Type="VI" URL="../SubVIs/Get Repo Path.vi"/>
 		<Item Name="GetAllDepsChain.vi" Type="VI" URL="../SubVIs/GetAllDepsChain.vi"/>
 		<Item Name="GetAllLVFilesForLibCheck.vi" Type="VI" URL="../SubVIs/GetAllLVFilesForLibCheck.vi"/>
@@ -54,6 +55,7 @@
 	</Item>
 	<Item Name="CheckOneLvlibLinked.vi" Type="VI" URL="../SubVIs/CheckOneLvlibLinked.vi"/>
 	<Item Name="CICDPathConfigLV2.vi" Type="VI" URL="../SubVIs/CICDPathConfigLV2.vi"/>
+	<Item Name="DuplicateWorkflows.vi" Type="VI" URL="../SubVIs/DuplicateWorkflows.vi"/>
 	<Item Name="ExpectedDepsCheckResults.vi" Type="VI" URL="../SubVIs/ExpectedDepsCheckResults.vi"/>
 	<Item Name="FindLibraryPath.vi" Type="VI" URL="../SubVIs/FindLibraryPath.vi"/>
 	<Item Name="FindLVLibProjectPath.vi" Type="VI" URL="../SubVIs/FindLVLibProjectPath.vi"/>
