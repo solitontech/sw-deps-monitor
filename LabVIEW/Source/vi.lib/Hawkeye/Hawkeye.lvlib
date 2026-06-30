@@ -29,9 +29,12 @@
 		<Item Name="AddLibSectionIfMissing.vi" Type="VI" URL="../SubVIs/AddLibSectionIfMissing.vi"/>
 		<Item Name="AutoFindRepoPath.vi" Type="VI" URL="../SubVIs/AutoFindRepoPath.vi"/>
 		<Item Name="Create New Project.vi" Type="VI" URL="../SubVIs/Create New Project.vi"/>
+		<Item Name="DuplicateHawkeyeConfig.vi" Type="VI" URL="../SubVIs/DuplicateHawkeyeConfig.vi"/>
 		<Item Name="FindAllLVDepsSubVIs.vi" Type="VI" URL="../SubVIs/FindAllLVDepsSubVIs.vi"/>
+		<Item Name="FindClassPath.vi" Type="VI" URL="../SubVIs/FindClassPath.vi"/>
 		<Item Name="FindDepsChainPath.vi" Type="VI" URL="../SubVIs/FindDepsChainPath.vi"/>
 		<Item Name="FindProjectPath.vi" Type="VI" URL="../SubVIs/FindProjectPath.vi"/>
+		<Item Name="Generate Hawkeye File.vi" Type="VI" URL="../SubVIs/Generate Hawkeye File.vi"/>
 		<Item Name="GenericStatusIndicator.vi" Type="VI" URL="../SubVIs/GenericStatusIndicator.vi"/>
 		<Item Name="Get Repo Path.vi" Type="VI" URL="../SubVIs/Get Repo Path.vi"/>
 		<Item Name="GetAllDepsChain.vi" Type="VI" URL="../SubVIs/GetAllDepsChain.vi"/>
