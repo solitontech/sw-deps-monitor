@@ -8,6 +8,7 @@
 
 </Property>
 	<Item Name="AutomatedChecks" Type="Folder">
+		<Item Name="GenerateAllClassLibList.vi" Type="VI" URL="../CheckModifiedVIs/GenerateAllClassLibList.vi"/>
 		<Item Name="IsLinkedToLibraryorClass.vi" Type="VI" URL="../AutomatedChecks/IsLinkedToLibraryorClass.vi"/>
 		<Item Name="UnexpectedDepsCheck.vi" Type="VI" URL="../AutomatedChecks/UnexpectedDepsCheck.vi"/>
 		<Item Name="UpdateActualDepsList.vi" Type="VI" URL="../AutomatedChecks/UpdateActualDepsList.vi"/>
@@ -36,21 +37,20 @@
 		<Item Name="FindClassPath.vi" Type="VI" URL="../SubVIs/FindClassPath.vi"/>
 		<Item Name="FindDepsChainPath.vi" Type="VI" URL="../SubVIs/FindDepsChainPath.vi"/>
 		<Item Name="FindLibraryPath.vi" Type="VI" URL="../SubVIs/FindLibraryPath.vi"/>
-		<Item Name="FindProjectPath.vi" Type="VI" URL="../SubVIs/FindProjectPath.vi"/>
 		<Item Name="FindUnexpectedDepsOfLibraries.vi" Type="VI" URL="../SubVIs/FindUnexpectedDepsOfLibraries.vi"/>
 		<Item Name="Generate Hawkeye File.vi" Type="VI" URL="../SubVIs/Generate Hawkeye File.vi"/>
 		<Item Name="GenericStatusIndicator.vi" Type="VI" URL="../SubVIs/GenericStatusIndicator.vi"/>
 		<Item Name="Get Callers Cache.vi" Type="VI" URL="../SubVIs/Get Callers Cache.vi"/>
 		<Item Name="Get Repo Path.vi" Type="VI" URL="../SubVIs/Get Repo Path.vi"/>
 		<Item Name="GetActualDepsListPath.vi" Type="VI" URL="../SubVIs/GetActualDepsListPath.vi"/>
-		<Item Name="GetAllClass.vi" Type="VI" URL="../SubVIs/GetAllClass.vi"/>
 		<Item Name="GetAllDepsChain.vi" Type="VI" URL="../SubVIs/GetAllDepsChain.vi"/>
-		<Item Name="GetAllLibraries.vi" Type="VI" URL="../SubVIs/GetAllLibraries.vi"/>
+		<Item Name="GetAllLibOrphanClass.vi" Type="VI" URL="../SubVIs/GetAllLibOrphanClass.vi"/>
 		<Item Name="GetAllLVFilesForLibCheck.vi" Type="VI" URL="../SubVIs/GetAllLVFilesForLibCheck.vi"/>
 		<Item Name="GetAllLVProjects.vi" Type="VI" URL="../SubVIs/GetAllLVProjects.vi"/>
 		<Item Name="GetDepsList.vi" Type="VI" URL="../SubVIs/GetDepsList.vi"/>
 		<Item Name="GetLVQualifiedName.vi" Type="VI" URL="../SubVIs/GetLVQualifiedName.vi"/>
 		<Item Name="HawkeyePathConfigLV2.vi" Type="VI" URL="../SubVIs/HawkeyePathConfigLV2.vi"/>
+		<Item Name="IsClassOrLib.vi" Type="VI" URL="../SubVIs/IsClassOrLib.vi"/>
 		<Item Name="IsUserLibVI.vi" Type="VI" URL="../SubVIs/IsUserLibVI.vi"/>
 		<Item Name="LVLibNameFromFileName.vi" Type="VI" URL="../SubVIs/LVLibNameFromFileName.vi"/>
 		<Item Name="LVLibNameFromFilePath.vi" Type="VI" URL="../SubVIs/LVLibNameFromFilePath.vi"/>
