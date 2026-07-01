@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-06-24 12:18:50" Modified_Date="2026-06-25 16:55:58" Creator="hariharan.arumugam" Comments="" ID="f2af720dac67198b4f07bb45deccfdda">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-06-24 12:18:50" Modified_Date="2026-07-01 10:43:37" Creator="hariharan.arumugam" Comments="" ID="a1d0830dd3784b45c81617ec2c1a60f5">
   <Library_General_Settings>
     <Package_File_Name>Hawkeye</Package_File_Name>
-    <Library_Version>0.1.0.2</Library_Version>
+    <Library_Version>0.1.0.3</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>Source</Library_Source_Folder>
     <Library_Output_Folder>..\Builds</Library_Output_Folder>
@@ -17,7 +17,7 @@
   </Library_General_Settings>
   <Advanced_Settings>
     <Package_Dependencies>
-      <Additional_External_Dependencies>hawkeyescripts &gt;=0.1.0.1</Additional_External_Dependencies>
+      <Additional_External_Dependencies>hawkeyescripts &gt;=0.1.0.2</Additional_External_Dependencies>
       <Additional_External_Dependencies>soliton_technologies_lib_sll_toolkit &gt;=1.1.0.3</Additional_External_Dependencies>
       <Additional_External_Dependencies>wiresmith_technology_lib_g_cli &gt;=3.0.1.98</Additional_External_Dependencies>
     </Package_Dependencies>
@@ -226,7 +226,7 @@ APIs available in &lt;b&gt; Functions Palette -&gt; Addons -&gt; Hawkeye &lt;/b&
         <Path>Source\vi.lib\Hawkeye\AutomatedChecks</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6DAFCAD31429B0B8CA152E6DD37E14A6</GUID>
+      <GUID>BE0FC3DA41123B61C38585383F6F5699</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -289,7 +289,7 @@ APIs available in &lt;b&gt; Functions Palette -&gt; Addons -&gt; Hawkeye &lt;/b&
         <Path>Source\vi.lib\Hawkeye\AutomatedChecks\UpdateActualDepsList.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E392720545645D286B52F309A057E6A7</GUID>
+      <GUID>F8EFE9CD79A0F9CC3A7651CFC0F55EAB</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>

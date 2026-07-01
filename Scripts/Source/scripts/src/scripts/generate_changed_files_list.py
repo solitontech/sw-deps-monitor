@@ -2,7 +2,7 @@
 This Module has funtions to generate the following lists:
 1. generate_changed_files_list(): Perform a git diff and Generates a list of changed files for the given base branch and head branch.
 2. generate_changed_lvfiles_list(): Generates a list of changed LabVIEW files with extensions .vi, .ctl, .lvclass, .lvlib, ignore_extensions: lvproj or None.
-3. filter_changed_lvfiles_based_on_scope(): Gets the list from one of the above functions and filters them based on configurations from CICD/Configs/PathConfigs.ini file.
+3. filter_changed_lvfiles_based_on_scope(): Gets the list from one of the above functions and filters them based on configurations from Hawkeye/Configs/PathConfigs.ini file.
     a. section_names_for_inclusion: List of section names in the PathConfigs.ini file to include paths from.
     b. section_names_for_exclusion: List of section names in the PathConfigs.ini file to exclude paths from.
     c. additional_exclude_paths: Additional paths to be excluded apart from the ones in the PathConfigs.ini file.
@@ -19,15 +19,15 @@ import os, subprocess, configparser
 
 
 ## Constants
-PATH_CONFIGS_FILE = "CICD/Configs/PathConfigs.ini"
+PATH_CONFIGS_FILE = "Hawkeye/Configs/PathConfigs.ini"
 section_names_for_inclusion = ["SourceFolderPaths", "GlobalIncludePaths"]
 section_names_for_exclusion = ["GlobalExcludePaths"]
 exclusion_section_specific_to_check = "ExcludePathsSpecificToChecks"
 # default repo-relative paths (fallbacks)
-changed_files_list_path = os.path.normpath(r"CICD\Temp\CheckModifiedLVFiles\changed_files.txt")
-changed_lvfiles_list_path = os.path.normpath(r"CICD\Temp\CheckModifiedLVFiles\changed_lvfiles.txt")
-in_scope_changed_lvfiles_path = os.path.normpath(r"CICD\Temp\CheckModifiedLVFiles\in_scope_changed_lvfiles.txt")
-in_scope_changed_lvlibs_path = os.path.normpath(r"CICD\Temp\CheckModifiedLVFiles\in_scope_changed_lvlibs.txt")
+changed_files_list_path = os.path.normpath(r".HawkeyeCache\Temp\CheckModifiedLVFiles\changed_files.txt")
+changed_lvfiles_list_path = os.path.normpath(r".HawkeyeCache\Temp\CheckModifiedLVFiles\changed_lvfiles.txt")
+in_scope_changed_lvfiles_path = os.path.normpath(r".HawkeyeCache\Temp\CheckModifiedLVFiles\in_scope_changed_lvfiles.txt")
+in_scope_changed_lvlibs_path = os.path.normpath(r".HawkeyeCache\Temp\CheckModifiedLVFiles\in_scope_changed_lvlibs.txt")
 
 def load_path_configs(workspace_root: str) -> None:
     """

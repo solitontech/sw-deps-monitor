@@ -135,7 +135,7 @@ def main():
     else:
         target_paths = scan_repo_files(root)
 
-    config_path = os.path.join(root, 'CICD', 'Configs', 'PathConfigs.ini')
+    config_path = os.path.join(root, 'Hawkeye', 'Configs', 'PathConfigs.ini')
     include_list, exclude_list = parse_path_config(config_path)
 
     invalid = []

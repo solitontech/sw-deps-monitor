@@ -14,7 +14,7 @@ if len(sys.argv) < 2:
 
 repo_path = Path(sys.argv[1])
 
-ini_path = repo_path / "CICD" / "Configs" / "PathConfigs.ini"
+ini_path = repo_path / "Hawkeye" / "Configs" / "PathConfigs.ini"
 
 print(f"Using config path: {ini_path}")
 
