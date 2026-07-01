@@ -8,12 +8,12 @@
 
 </Property>
 	<Item Name="AutomatedChecks" Type="Folder">
-		<Item Name="GenerateAllClassLibList.vi" Type="VI" URL="../CheckModifiedVIs/GenerateAllClassLibList.vi"/>
 		<Item Name="IsLinkedToLibraryorClass.vi" Type="VI" URL="../AutomatedChecks/IsLinkedToLibraryorClass.vi"/>
 		<Item Name="UnexpectedDepsCheck.vi" Type="VI" URL="../AutomatedChecks/UnexpectedDepsCheck.vi"/>
 		<Item Name="UpdateActualDepsList.vi" Type="VI" URL="../AutomatedChecks/UpdateActualDepsList.vi"/>
 	</Item>
 	<Item Name="CheckModifiedVIs" Type="Folder">
+		<Item Name="GenerateAllClassLibList.vi" Type="VI" URL="../CheckModifiedVIs/GenerateAllClassLibList.vi"/>
 		<Item Name="GenerateChangedFilesList.vi" Type="VI" URL="../CheckModifiedVIs/GenerateChangedFilesList.vi"/>
 		<Item Name="GenerateChangedLibrariesList.vi" Type="VI" URL="../CheckModifiedVIs/GenerateChangedLibrariesList.vi"/>
 		<Item Name="ReadChangedLibrariesLog.vi" Type="VI" URL="../SubVIs/ReadChangedLibrariesLog.vi"/>
@@ -33,7 +33,6 @@
 		<Item Name="DuplicateWorkflows.vi" Type="VI" URL="../SubVIs/DuplicateWorkflows.vi"/>
 		<Item Name="ExpectedDepsCheckResults.vi" Type="VI" URL="../SubVIs/ExpectedDepsCheckResults.vi"/>
 		<Item Name="FindAllDepsList.vi" Type="VI" URL="../SubVIs/FindAllDepsList.vi"/>
-		<Item Name="FindAllLVDepsSubVIs.vi" Type="VI" URL="../SubVIs/FindAllLVDepsSubVIs.vi"/>
 		<Item Name="FindClassPath.vi" Type="VI" URL="../SubVIs/FindClassPath.vi"/>
 		<Item Name="FindDepsChainPath.vi" Type="VI" URL="../SubVIs/FindDepsChainPath.vi"/>
 		<Item Name="FindLibraryPath.vi" Type="VI" URL="../SubVIs/FindLibraryPath.vi"/>
