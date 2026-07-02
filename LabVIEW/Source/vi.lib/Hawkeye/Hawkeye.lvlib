@@ -43,6 +43,7 @@
 		<Item Name="Get Repo Path.vi" Type="VI" URL="../SubVIs/Get Repo Path.vi"/>
 		<Item Name="GetActualDepsListPath.vi" Type="VI" URL="../SubVIs/GetActualDepsListPath.vi"/>
 		<Item Name="GetAllDepsChain.vi" Type="VI" URL="../SubVIs/GetAllDepsChain.vi"/>
+		<Item Name="GetAllDepsUsingLVProj.vi" Type="VI" URL="../SubVIs/GetAllDepsUsingLVProj.vi"/>
 		<Item Name="GetAllLibOrphanClass.vi" Type="VI" URL="../SubVIs/GetAllLibOrphanClass.vi"/>
 		<Item Name="GetAllLVFilesForLibCheck.vi" Type="VI" URL="../SubVIs/GetAllLVFilesForLibCheck.vi"/>
 		<Item Name="GetAllLVProjects.vi" Type="VI" URL="../SubVIs/GetAllLVProjects.vi"/>
@@ -56,6 +57,7 @@
 		<Item Name="ReadChangedFileLogPaths.vi" Type="VI" URL="../SubVIs/ReadChangedFileLogPaths.vi"/>
 		<Item Name="ReadChangedLVFilesList.vi" Type="VI" URL="../SubVIs/ReadChangedLVFilesList.vi"/>
 		<Item Name="ReadExpectedDependencies.vi" Type="VI" URL="../SubVIs/ReadExpectedDependencies.vi"/>
+		<Item Name="SortHawkeyeList.vi" Type="VI" URL="../SubVIs/SortHawkeyeList.vi"/>
 		<Item Name="Unclaimed LVClass Check.vi" Type="VI" URL="../SubVIs/Unclaimed LVClass Check.vi"/>
 		<Item Name="UpdateActualDepsOfLibraries.vi" Type="VI" URL="../SubVIs/UpdateActualDepsOfLibraries.vi"/>
 		<Item Name="UpdateHawkeyeList.vi" Type="VI" URL="../SubVIs/UpdateHawkeyeList.vi"/>
