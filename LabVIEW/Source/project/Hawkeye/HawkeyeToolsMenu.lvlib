@@ -8,5 +8,5 @@
 	<Item Name="Find Unexpected Deps.vi" Type="VI" URL="../Find Unexpected Deps.vi"/>
 	<Item Name="Find Dependency Chain.vi" Type="VI" URL="../Find Dependency Chain.vi"/>
 	<Item Name="Initialize Hawkeye.vi" Type="VI" URL="../Initialize Hawkeye.vi"/>
-	<Item Name="Regenerate Hawkeye Files.vi" Type="VI" URL="../Regenerate Hawkeye Files.vi"/>
+	<Item Name="Regenerate Hawkeye List.vi" Type="VI" URL="../Regenerate Hawkeye List.vi"/>
 </Library>
