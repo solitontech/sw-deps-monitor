@@ -67,4 +67,6 @@
 		<Item Name="DepsCheckResult.ctl" Type="VI" URL="../Typedefs/DepsCheckResult.ctl"/>
 		<Item Name="HawkeyePathConfigs.ctl" Type="VI" URL="../Typedefs/HawkeyePathConfigs.ctl"/>
 	</Item>
+	<Item Name="Get Cache File Details.vi" Type="VI" URL="../SubVIs/Get Cache File Details.vi"/>
+	<Item Name="ReadSectionCacheData.vi" Type="VI" URL="../SubVIs/ReadSectionCacheData.vi"/>
 </Library>

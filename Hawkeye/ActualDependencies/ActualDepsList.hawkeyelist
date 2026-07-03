@@ -16,6 +16,7 @@ Unknown = ""
 [ArrayUtilities.lvlib:Indirect]
 
 [FileUtilities.lvlib:Direct]
+GraphUtilities.lvclass = ""
 
 [FileUtilities.lvlib:Indirect]
 
@@ -29,6 +30,7 @@ ACComm.lvlib = ""
 FileUtilities.lvlib = ""
 
 [ModuleA.lvlib:Indirect]
+GraphUtilities.lvclass = ""
 
 [ModuleB.lvlib:Direct]
 ModuleA.lvlib = ""
@@ -46,11 +48,11 @@ ACComm.lvlib = ""
 [ModuleC.lvlib:Indirect]
 
 [ModuleD.lvclass:Direct]
+ABComm.lvlib = ""
 ModuleB.lvlib = ""
 ModuleC.lvlib = ""
 
 [ModuleD.lvclass:Indirect]
-ABComm.lvlib = ""
 ACComm.lvlib = ""
 FileUtilities.lvlib = ""
 GraphUtilities.lvclass = ""
