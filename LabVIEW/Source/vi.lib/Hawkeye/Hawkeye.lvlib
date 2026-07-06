@@ -39,7 +39,7 @@
 		<Item Name="FindUnexpectedDepsOfLibraries.vi" Type="VI" URL="../SubVIs/FindUnexpectedDepsOfLibraries.vi"/>
 		<Item Name="Generate Hawkeye File.vi" Type="VI" URL="../SubVIs/Generate Hawkeye File.vi"/>
 		<Item Name="GenericStatusIndicator.vi" Type="VI" URL="../SubVIs/GenericStatusIndicator.vi"/>
-		<Item Name="Get Callers Cache.vi" Type="VI" URL="../SubVIs/Get Callers Cache.vi"/>
+		<Item Name="Get Linker Cache.vi" Type="VI" URL="../SubVIs/Get Linker Cache.vi"/>
 		<Item Name="Get Repo Path.vi" Type="VI" URL="../SubVIs/Get Repo Path.vi"/>
 		<Item Name="GetActualDepsListPath.vi" Type="VI" URL="../SubVIs/GetActualDepsListPath.vi"/>
 		<Item Name="GetAllDepsChain.vi" Type="VI" URL="../SubVIs/GetAllDepsChain.vi"/>
