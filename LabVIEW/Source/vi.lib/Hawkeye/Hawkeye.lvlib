@@ -39,6 +39,7 @@
 		<Item Name="FindUnexpectedDepsOfLibraries.vi" Type="VI" URL="../SubVIs/FindUnexpectedDepsOfLibraries.vi"/>
 		<Item Name="Generate Hawkeye File.vi" Type="VI" URL="../SubVIs/Generate Hawkeye File.vi"/>
 		<Item Name="GenericStatusIndicator.vi" Type="VI" URL="../SubVIs/GenericStatusIndicator.vi"/>
+		<Item Name="Get Cache File Details.vi" Type="VI" URL="../SubVIs/Get Cache File Details.vi"/>
 		<Item Name="Get Linker Cache.vi" Type="VI" URL="../SubVIs/Get Linker Cache.vi"/>
 		<Item Name="Get Repo Path.vi" Type="VI" URL="../SubVIs/Get Repo Path.vi"/>
 		<Item Name="GetActualDepsListPath.vi" Type="VI" URL="../SubVIs/GetActualDepsListPath.vi"/>
@@ -54,9 +55,11 @@
 		<Item Name="IsUserLibVI.vi" Type="VI" URL="../SubVIs/IsUserLibVI.vi"/>
 		<Item Name="LVLibNameFromFileName.vi" Type="VI" URL="../SubVIs/LVLibNameFromFileName.vi"/>
 		<Item Name="LVLibNameFromFilePath.vi" Type="VI" URL="../SubVIs/LVLibNameFromFilePath.vi"/>
+		<Item Name="Read Linker Info.vi" Type="VI" URL="../SubVIs/Read Linker Info.vi"/>
 		<Item Name="ReadChangedFileLogPaths.vi" Type="VI" URL="../SubVIs/ReadChangedFileLogPaths.vi"/>
 		<Item Name="ReadChangedLVFilesList.vi" Type="VI" URL="../SubVIs/ReadChangedLVFilesList.vi"/>
 		<Item Name="ReadExpectedDependencies.vi" Type="VI" URL="../SubVIs/ReadExpectedDependencies.vi"/>
+		<Item Name="ReadSectionCacheData.vi" Type="VI" URL="../SubVIs/ReadSectionCacheData.vi"/>
 		<Item Name="SortHawkeyeList.vi" Type="VI" URL="../SubVIs/SortHawkeyeList.vi"/>
 		<Item Name="Unclaimed LVClass Check.vi" Type="VI" URL="../SubVIs/Unclaimed LVClass Check.vi"/>
 		<Item Name="UpdateActualDepsOfLibraries.vi" Type="VI" URL="../SubVIs/UpdateActualDepsOfLibraries.vi"/>
@@ -67,6 +70,4 @@
 		<Item Name="DepsCheckResult.ctl" Type="VI" URL="../Typedefs/DepsCheckResult.ctl"/>
 		<Item Name="HawkeyePathConfigs.ctl" Type="VI" URL="../Typedefs/HawkeyePathConfigs.ctl"/>
 	</Item>
-	<Item Name="Get Cache File Details.vi" Type="VI" URL="../SubVIs/Get Cache File Details.vi"/>
-	<Item Name="ReadSectionCacheData.vi" Type="VI" URL="../SubVIs/ReadSectionCacheData.vi"/>
 </Library>
