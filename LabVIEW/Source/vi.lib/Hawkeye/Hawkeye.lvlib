@@ -31,6 +31,7 @@
 		<Item Name="Create New Project.vi" Type="VI" URL="../SubVIs/Create New Project.vi"/>
 		<Item Name="DuplicateHawkeyeConfig.vi" Type="VI" URL="../SubVIs/DuplicateHawkeyeConfig.vi"/>
 		<Item Name="DuplicateWorkflows.vi" Type="VI" URL="../SubVIs/DuplicateWorkflows.vi"/>
+		<Item Name="Error Logger.vi" Type="VI" URL="../Error Logger.vi"/>
 		<Item Name="ExpectedDepsCheckResults.vi" Type="VI" URL="../SubVIs/ExpectedDepsCheckResults.vi"/>
 		<Item Name="FindAllDepsList.vi" Type="VI" URL="../SubVIs/FindAllDepsList.vi"/>
 		<Item Name="FindClassPath.vi" Type="VI" URL="../SubVIs/FindClassPath.vi"/>
