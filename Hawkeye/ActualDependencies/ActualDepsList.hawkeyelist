@@ -29,7 +29,7 @@ Unknown = ""
 ABComm.lvlib = ""
 ACComm.lvlib = ""
 FileUtilities.lvlib = ""
-Unknown = ""
+UpdateStatus.lvlib = ""
 
 [ModuleA.lvlib:Indirect]
 GraphUtilities.lvclass = ""
@@ -46,6 +46,7 @@ ACComm.lvlib = ""
 FileUtilities.lvlib = ""
 GraphUtilities.lvclass = ""
 Unknown = ""
+UpdateStatus.lvlib = ""
 
 [ModuleC.lvlib:Direct]
 ACComm.lvlib = ""
@@ -65,9 +66,17 @@ GraphUtilities.lvclass = ""
 ModuleA.lvlib = ""
 StringUtilities.lvlib = ""
 Unknown = ""
+UpdateStatus.lvlib = ""
 
 [StringUtilities.lvlib:Direct]
 GraphUtilities.lvclass = ""
 
 [StringUtilities.lvlib:Indirect]
+Unknown = ""
+
+[UpdateStatus.lvlib:Direct]
+StringUtilities.lvlib = ""
+
+[UpdateStatus.lvlib:Indirect]
+GraphUtilities.lvclass = ""
 Unknown = ""
