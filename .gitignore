@@ -27,7 +27,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
+builds/
 develop-eggs/
 dist/
 downloads/
@@ -241,12 +241,15 @@ __marimo__/
 Docs/Temp/
 
 # CICD Temp CheckAll
-CICD/Temp/CheckAllLVFiles/
-CICD/Reports/CheckAllLVFiles/
+.HawkeyeCache/Temp/CheckAllLVFiles/
+.HawkeyeCache/Reports/CheckAllLVFiles/
 
 # CICD Temp CheckModified
-CICD/Temp/CheckModifiedLVFiles/
-CICD/Reports/CheckModifiedLVFiles/
+.HawkeyeCache/Temp/CheckModifiedLVFiles/
+.HawkeyeCache/Reports/CheckModifiedLVFiles/
+
+#Cache Files
+.HawkeyeCache/GetCallers/
 
 # Temporary report files
 reports/

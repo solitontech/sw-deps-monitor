@@ -41,8 +41,8 @@ def calculate_metrics(G) -> List[Dict[str, Any]]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Calculate coupling metrics (Ca, Ce, I) from .adeps files.")
-    parser.add_argument("--file", default="Source/ActualDependencies", help="Path to .adeps file or directory")
+    parser = argparse.ArgumentParser(description="Calculate coupling metrics (Ca, Ce, I) from .hawkeyelist files.")
+    parser.add_argument("--file", default="Hawkeye/ActualDependencies", help="Path to .hawkeyelist file or directory")
     parser.add_argument("--output", default="reports/coupling_metrics.md", help="Output markdown file path")
     args = parser.parse_args()
 

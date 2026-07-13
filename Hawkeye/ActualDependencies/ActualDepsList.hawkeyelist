@@ -29,9 +29,11 @@ Unknown = ""
 ABComm.lvlib = ""
 ACComm.lvlib = ""
 FileUtilities.lvlib = ""
+Unknown = ""
 
 [ModuleA.lvlib:Indirect]
 GraphUtilities.lvclass = ""
+StringUtilities.lvlib = ""
 Unknown = ""
 
 [ModuleB.lvlib:Direct]

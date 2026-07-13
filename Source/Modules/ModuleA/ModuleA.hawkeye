@@ -1,10 +1,11 @@
 [ModuleA.lvlib:Direct]
 ABComm.lvlib = ""
 ACComm.lvlib = ""
-Unknown = ""
 FileUtilities.lvlib = ""
+Unknown = ""
 
 [ModuleA.lvlib:Indirect]
-GraphUtilities.lvclass = ""
 ACComm.lvlib = ""
 Unknown = ""
+GraphUtilities.lvclass = ""
+StringUtilities.lvlib = ""

@@ -6,7 +6,7 @@ Python replacement for the PowerShell-based path validator.
 
 Usage examples:
   python scripts/validate-paths.py --paths-file changed-files.txt
-  python scripts/validate-paths.py --paths Source\MyFile.cs Tests\BarTest.cs
+  python scripts/validate-paths.py --paths Hawkeye\MyFile.cs Tests\BarTest.cs
 
 Exit codes:
   0 - all checked paths valid

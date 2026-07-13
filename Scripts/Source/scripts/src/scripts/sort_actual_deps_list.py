@@ -69,10 +69,10 @@ def process_path(folder: Path, exts, recursive=False):
             write_file(f, header, sorted_sections)
             print(f"Processed: {f}")
 
-def main(folder, ext=".adeps,.ini", recursive=False):
+def main(folder, ext=".hawkeyelist,.ini", recursive=False):
     """
     folder: path string or Path
-    ext: comma-separated extensions string (e.g. ".adeps,.ini") or iterable
+    ext: comma-separated extensions string (e.g. ".hawkeyelist,.ini") or iterable
     recursive: bool
     """
     folder = Path(folder)
@@ -88,11 +88,11 @@ def main(folder, ext=".adeps,.ini", recursive=False):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description="Sort INI-style sections and keys in files.")
-    ap.add_argument("folder", nargs="?", default=str(os.path.join(Path.cwd(), "Source", "ActualDependencies")), help="Folder containing files (default: current working directory)")
-    ap.add_argument("--ext", default=".adeps,.ini", help="Comma-separated extensions to process (default: .adeps,.ini)")
+    ap.add_argument("folder", nargs="?", default=str(os.path.join(Path.cwd(), "Hawkeye", "ActualDependencies")), help="Folder containing files (default: current working directory)")
+    ap.add_argument("--ext", default=".hawkeyelist,.ini", help="Comma-separated extensions to process (default: .hawkeyelist,.ini)")
     ap.add_argument("-r", "--recursive", action="store_false", help="Recurse into subfolders")
     args = ap.parse_args()
     main(args.folder, args.ext, args.recursive)
 
-# >uv run python e:\sw-deps-monitor\scripts\src\scripts\sort_actual_deps_list.py "e:\sw-deps-monitor\Source\ActualDependencies" -r -
-# -ext .adeps,.ini
+# >uv run python e:\sw-deps-monitor\scripts\src\scripts\sort_actual_deps_list.py "e:\sw-deps-monitor\Hawkeye\ActualDependencies" -r -
+# -ext .hawkeyelist,.ini

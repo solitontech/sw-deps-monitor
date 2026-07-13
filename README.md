@@ -22,7 +22,7 @@ If Developers accidentally introduce an unexpected dependency, the tools can cat
 
 If Developers see a need to introduce a new dependency, they can align with the Leads/Architects to seek their guidance and approval and then update the .hawkeye files accordingly to introduce the change in design. 
 
-At any point in time, the ActualDepsList.hawkeyelist file can be reviewed by the Architects and Tech Leads to find if the dependencies are as expected in the repository. They can also visualize the dependencies by generating a graph image output from the ActualDepsList.adeps file to get a better understanding of the dependencies between the libraries in the repository. This can help them identify any potential issues with the dependencies and take necessary actions to resolve them.
+At any point in time, the ActualDepsList.hawkeyelist file can be reviewed by the Architects and Tech Leads to find if the dependencies are as expected in the repository. They can also visualize the dependencies by generating a graph image output from the ActualDepsList.hawkeyelist file to get a better understanding of the dependencies between the libraries in the repository. This can help them identify any potential issues with the dependencies and take necessary actions to resolve them.
 
 <u>**More Details in the presentation:**</u> 
 [Automated Dependency Monitoring in CI Pipeline](Docs/Automated%20Dependency%20Monitoring%20in%20CI%20Pipeline.pptx)

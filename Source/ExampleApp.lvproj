@@ -25,8 +25,8 @@
 			<Item Name="ArrayUtilities.lvlib" Type="Library" URL="../Utilities/ArrayUtilities/ArrayUtilities.lvlib"/>
 			<Item Name="FileUtilities.lvlib" Type="Library" URL="../Utilities/FileUtilities/FileUtilities.lvlib"/>
 			<Item Name="GraphUtilities.lvclass" Type="LVClass" URL="../Utilities/GraphUtilities/GraphUtilities.lvclass"/>
-			<Item Name="StatusUpdate.vi" Type="VI" URL="../Utilities/StatusUpdate.vi"/>
 			<Item Name="StringUtilities.lvlib" Type="Library" URL="../Utilities/StringUtilities/StringUtilities.lvlib"/>
+			<Item Name="UpdateStatus.lvlib" Type="Library" URL="../Utilities/UpdateStatus/UpdateStatus.lvlib"/>
 		</Item>
 		<Item Name="Dependencies" Type="Dependencies"/>
 		<Item Name="Build Specifications" Type="Build"/>

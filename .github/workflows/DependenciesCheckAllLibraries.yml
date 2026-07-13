@@ -55,10 +55,10 @@ jobs:
           uv sync
           cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}
           scripts\.venv\Scripts\activate
-          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\sort_actual_deps_list.py "${{ github.workspace }}\Source\ActualDependencies"
-          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\find_circular_paths.py --folder "${{ github.workspace }}\Source\ActualDependencies"
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\sort_actual_deps_list.py "${{ github.workspace }}\Hawkeye\ActualDependencies"
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\find_circular_paths.py --folder "${{ github.workspace }}\Hawkeye\ActualDependencies"
 
-      - name: Create PR for ActualDepsList.adeps dependency updates if needed
+      - name: Create PR for ActualDepsList.hawkeyelist dependency updates if needed
         shell: powershell
         env:
           GITHUB_TOKEN: ${{ secrets.DEPS_MON_TOKEN }}
@@ -67,5 +67,5 @@ jobs:
           uv sync
           cd ${{ env.LV_PYTHON_SCRIPTS_PATH }}
           scripts\.venv\Scripts\activate
-          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\create_pr_for_deps.py --workspace "${{ github.workspace }}" --deps-file-path "Source\ActualDependencies\ActualDepsList.adeps" --base-branch "${{ github.ref_name }}"
+          uv run python -u ${{ env.LV_PYTHON_SCRIPTS_PATH }}\scripts\src\scripts\create_pr_for_deps.py --workspace "${{ github.workspace }}" --deps-file-path "Hawkeye\ActualDependencies\ActualDepsList.hawkeyelist" --base-branch "${{ github.ref_name }}"
           

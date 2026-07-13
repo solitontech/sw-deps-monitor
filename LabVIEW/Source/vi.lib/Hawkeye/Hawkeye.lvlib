@@ -77,4 +77,5 @@
 		<Item Name="DepsFailure.ctl" Type="VI" URL="../Typedefs/DepsFailure.ctl"/>
 		<Item Name="HawkeyePathConfigs.ctl" Type="VI" URL="../Typedefs/HawkeyePathConfigs.ctl"/>
 	</Item>
+	<Item Name="GenerateChangedLVFilesPath.vi" Type="VI" URL="../CheckModifiedVIs/GenerateChangedLVFilesPath.vi"/>
 </Library>

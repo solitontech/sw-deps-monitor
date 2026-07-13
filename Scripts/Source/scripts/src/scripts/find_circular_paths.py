@@ -3,8 +3,8 @@ import sys
 from scripts import analyze_dependencies
 
 def main():
-    parser = argparse.ArgumentParser(description="Check for circular dependencies in .adeps file")
-    parser.add_argument("--folder", default="Source/ActualDependencies", help="Path to .adeps file")
+    parser = argparse.ArgumentParser(description="Check for circular dependencies in .hawkeyelist file")
+    parser.add_argument("--folder", default="Hawkeye/ActualDependencies", help="Path to .hawkeyelist file")
     args = parser.parse_args()
 
     try:

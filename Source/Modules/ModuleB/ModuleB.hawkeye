@@ -5,6 +5,6 @@ StringUtilities.lvlib = ""
 [ModuleB.lvlib:Indirect]
 ABComm.lvlib = ""
 ACComm.lvlib = ""
-FileUtilities.lvlib = ""
-GraphUtilities.lvclass = ""
 Unknown = ""
+GraphUtilities.lvclass = ""
+FileUtilities.lvlib = ""

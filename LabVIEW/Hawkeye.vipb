@@ -1,4 +1,4 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-06-24 12:18:50" Modified_Date="2026-07-13 00:39:42" Creator="hariharan.arumugam" Comments="" ID="ee173b1322756e9b7ccb40f8ac44ec3e">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2026-06-24 12:18:50" Modified_Date="2026-07-13 10:18:45" Creator="hariharan.arumugam" Comments="" ID="a4ef85bf9bdbab2023b58570a3d327d2">
   <Library_General_Settings>
     <Package_File_Name>Hawkeye</Package_File_Name>
     <Library_Version>1.0.0.2</Library_Version>
@@ -232,7 +232,7 @@ Available in: Tools -&gt; HAWKEYE
         <Path>Source\vi.lib\Hawkeye\AutomatedChecks</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>019849137D40EC002E59033FB0425CBA</GUID>
+      <GUID>32BAA83B715BEDED2F8A96C4B27AF957</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -295,7 +295,7 @@ Available in: Tools -&gt; HAWKEYE
         <Path>Source\vi.lib\Hawkeye\AutomatedChecks\UpdateActualDepsList.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>FED30F3A86FECE258FE4FE37E09B38D7</GUID>
+      <GUID>ECF681D0F4D6AD817F0835900F298001</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
