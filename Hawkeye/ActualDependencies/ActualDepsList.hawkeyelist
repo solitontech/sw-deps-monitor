@@ -68,6 +68,21 @@ StringUtilities.lvlib = ""
 Unknown = ""
 UpdateStatus.lvlib = ""
 
+[ModuleE.lvlib:Direct]
+ModuleD.lvclass = ""
+
+[ModuleE.lvlib:Indirect]
+ABComm.lvlib = ""
+ACComm.lvlib = ""
+FileUtilities.lvlib = ""
+GraphUtilities.lvclass = ""
+ModuleA.lvlib = ""
+ModuleB.lvlib = ""
+ModuleC.lvlib = ""
+StringUtilities.lvlib = ""
+Unknown = ""
+UpdateStatus.lvlib = ""
+
 [StringUtilities.lvlib:Direct]
 GraphUtilities.lvclass = ""
 

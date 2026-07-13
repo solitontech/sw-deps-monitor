@@ -8,6 +8,7 @@
 
 </Property>
 	<Item Name="AutomatedChecks" Type="Folder">
+		<Item Name="GenerateChangedLVFilesPath.vi" Type="VI" URL="../CheckModifiedVIs/GenerateChangedLVFilesPath.vi"/>
 		<Item Name="IsLinkedToLibraryorClass.vi" Type="VI" URL="../AutomatedChecks/IsLinkedToLibraryorClass.vi"/>
 		<Item Name="UnexpectedDepsCheck.vi" Type="VI" URL="../AutomatedChecks/UnexpectedDepsCheck.vi"/>
 		<Item Name="UpdateActualDepsList.vi" Type="VI" URL="../AutomatedChecks/UpdateActualDepsList.vi"/>
@@ -32,7 +33,7 @@
 		<Item Name="Create New Project.vi" Type="VI" URL="../SubVIs/Create New Project.vi"/>
 		<Item Name="DuplicateHawkeyeConfig.vi" Type="VI" URL="../SubVIs/DuplicateHawkeyeConfig.vi"/>
 		<Item Name="DuplicateWorkflows.vi" Type="VI" URL="../SubVIs/DuplicateWorkflows.vi"/>
-		<Item Name="Error Logger.vi" Type="VI" URL="../Error Logger.vi"/>
+		<Item Name="Error Logger.vi" Type="VI" URL="../SubVIs/Error Logger.vi"/>
 		<Item Name="ExpectedDepsCheckResults.vi" Type="VI" URL="../SubVIs/ExpectedDepsCheckResults.vi"/>
 		<Item Name="FindAllDepsList.vi" Type="VI" URL="../SubVIs/FindAllDepsList.vi"/>
 		<Item Name="FindClassPath.vi" Type="VI" URL="../SubVIs/FindClassPath.vi"/>
@@ -77,5 +78,4 @@
 		<Item Name="DepsFailure.ctl" Type="VI" URL="../Typedefs/DepsFailure.ctl"/>
 		<Item Name="HawkeyePathConfigs.ctl" Type="VI" URL="../Typedefs/HawkeyePathConfigs.ctl"/>
 	</Item>
-	<Item Name="GenerateChangedLVFilesPath.vi" Type="VI" URL="../CheckModifiedVIs/GenerateChangedLVFilesPath.vi"/>
 </Library>

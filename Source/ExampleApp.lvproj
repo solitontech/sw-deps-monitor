@@ -20,6 +20,7 @@
 			<Item Name="ModuleB.lvlib" Type="Library" URL="../Modules/ModuleB/ModuleB.lvlib"/>
 			<Item Name="ModuleC.lvlib" Type="Library" URL="../Modules/ModuleC/ModuleC.lvlib"/>
 			<Item Name="ModuleD.lvclass" Type="LVClass" URL="../Modules/ModuleD/ModuleD.lvclass"/>
+			<Item Name="ModuleE.lvlib" Type="Library" URL="../Modules/ModuleE/ModuleE.lvlib"/>
 		</Item>
 		<Item Name="Utilities" Type="Folder">
 			<Item Name="ArrayUtilities.lvlib" Type="Library" URL="../Utilities/ArrayUtilities/ArrayUtilities.lvlib"/>
