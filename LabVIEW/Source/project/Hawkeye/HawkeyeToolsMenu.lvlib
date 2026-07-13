@@ -5,8 +5,9 @@
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Property Name="NI.SortType" Type="Int">3</Property>
-	<Item Name="Find Unexpected Deps.vi" Type="VI" URL="../Find Unexpected Deps.vi"/>
-	<Item Name="Find Dependency Chain.vi" Type="VI" URL="../Find Dependency Chain.vi"/>
 	<Item Name="Initialize Hawkeye.vi" Type="VI" URL="../Initialize Hawkeye.vi"/>
 	<Item Name="Regenerate Hawkeye List.vi" Type="VI" URL="../Regenerate Hawkeye List.vi"/>
+	<Item Name="Regenerate Linker Cache.vi" Type="VI" URL="../Regenerate Linker Cache.vi"/>
+	<Item Name="Find Unexpected Deps.vi" Type="VI" URL="../Find Unexpected Deps.vi"/>
+	<Item Name="Find Dependency Chain.vi" Type="VI" URL="../Find Dependency Chain.vi"/>
 </Library>

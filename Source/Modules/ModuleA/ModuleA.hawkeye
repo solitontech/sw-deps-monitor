@@ -2,6 +2,11 @@
 ABComm.lvlib = ""
 ACComm.lvlib = ""
 FileUtilities.lvlib = ""
+Unknown = ""
+UpdateStatus.lvlib = ""
 
 [ModuleA.lvlib:Indirect]
+ACComm.lvlib = ""
+Unknown = ""
 GraphUtilities.lvclass = ""
+StringUtilities.lvlib = ""

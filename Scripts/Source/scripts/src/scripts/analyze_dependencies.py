@@ -11,8 +11,8 @@ import plotly.io as pio
 
 def load_graph_from_adeps(path: str) -> nx.DiGraph:
     """
-    Parses .adeps (INI-style) file(s) and returns a NetworkX Directed Graph.
-    If path is a directory, loads all .adeps files in it.
+    Parses .hawkeyelist (INI-style) file(s) and returns a NetworkX Directed Graph.
+    If path is a directory, loads all .hawkeyelist files in it.
     Sections are nodes, and keys within sections are outgoing edges (dependencies).
     """
     if not os.path.exists(path):
@@ -22,7 +22,7 @@ def load_graph_from_adeps(path: str) -> nx.DiGraph:
     if os.path.isdir(path):
         for root, _, filenames in os.walk(path):
             for filename in filenames:
-                if filename.endswith(".adeps"):
+                if filename.endswith(".hawkeyelist"):
                     files.append(os.path.join(root, filename))
     else:
         files.append(path)
@@ -256,13 +256,13 @@ def analyze_node_and_plot(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Analyze dependency graph from .adeps file")
+    parser = argparse.ArgumentParser(description="Analyze dependency graph from .hawkeyelist file")
     parser.add_argument(
         "--file",
         type=str,
         # required=True,
-        default="Source/ActualDependencies",
-        help="Path to the .adeps file or directory (e.g., Source/ActualDependencies)",
+        default="Hawkeye/ActualDependencies",
+        help="Path to the .hawkeyelist file or directory (e.g., Hawkeye/ActualDependencies)",
     )
     parser.add_argument(
         "--node",

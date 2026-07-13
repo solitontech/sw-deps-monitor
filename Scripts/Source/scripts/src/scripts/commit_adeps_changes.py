@@ -53,7 +53,7 @@ def main():
 
 if __name__ == "__main__":
     # For local testing:
-    # 1. Manually change the deps file (e.g., Source/ActualDependencies/ActualDepsList.adeps)
+    # 1. Manually change the deps file (e.g., Hawkeye/ActualDependencies/ActualDepsList.hawkeyelist)
     # 2. Check out a feature branch.
     # 3. Run the script from the repository root: `uv run python scripts/src/scripts/commit_adeps_changes.py`
     if len(sys.argv) == 1:
@@ -80,7 +80,7 @@ if __name__ == "__main__":
         print(f"Detected current branch: '{current_branch}'. Using it for the --branch argument.")
         sys.argv.extend([
             "--workspace", ".",
-            "--deps-file-path", "Source/ActualDependencies/ActualDepsList.adeps",
+            "--deps-file-path", "Hawkeye/ActualDependencies/ActualDepsList.hawkeyelist",
             "--branch", current_branch,
         ])
     main()

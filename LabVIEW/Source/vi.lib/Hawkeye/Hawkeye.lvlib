@@ -8,6 +8,7 @@
 
 </Property>
 	<Item Name="AutomatedChecks" Type="Folder">
+		<Item Name="GenerateChangedLVFilesPath.vi" Type="VI" URL="../CheckModifiedVIs/GenerateChangedLVFilesPath.vi"/>
 		<Item Name="IsLinkedToLibraryorClass.vi" Type="VI" URL="../AutomatedChecks/IsLinkedToLibraryorClass.vi"/>
 		<Item Name="UnexpectedDepsCheck.vi" Type="VI" URL="../AutomatedChecks/UnexpectedDepsCheck.vi"/>
 		<Item Name="UpdateActualDepsList.vi" Type="VI" URL="../AutomatedChecks/UpdateActualDepsList.vi"/>
@@ -28,18 +29,22 @@
 	<Item Name="SubVIs" Type="Folder">
 		<Item Name="AddLibSectionIfMissing.vi" Type="VI" URL="../SubVIs/AddLibSectionIfMissing.vi"/>
 		<Item Name="AutoFindRepoPath.vi" Type="VI" URL="../SubVIs/AutoFindRepoPath.vi"/>
+		<Item Name="ConfirmApprovedList.vi" Type="VI" URL="../SubVIs/ConfirmApprovedList.vi"/>
 		<Item Name="Create New Project.vi" Type="VI" URL="../SubVIs/Create New Project.vi"/>
 		<Item Name="DuplicateHawkeyeConfig.vi" Type="VI" URL="../SubVIs/DuplicateHawkeyeConfig.vi"/>
 		<Item Name="DuplicateWorkflows.vi" Type="VI" URL="../SubVIs/DuplicateWorkflows.vi"/>
+		<Item Name="Error Logger.vi" Type="VI" URL="../SubVIs/Error Logger.vi"/>
 		<Item Name="ExpectedDepsCheckResults.vi" Type="VI" URL="../SubVIs/ExpectedDepsCheckResults.vi"/>
 		<Item Name="FindAllDepsList.vi" Type="VI" URL="../SubVIs/FindAllDepsList.vi"/>
 		<Item Name="FindClassPath.vi" Type="VI" URL="../SubVIs/FindClassPath.vi"/>
 		<Item Name="FindDepsChainPath.vi" Type="VI" URL="../SubVIs/FindDepsChainPath.vi"/>
+		<Item Name="FindHawkeyePath.vi" Type="VI" URL="../SubVIs/FindHawkeyePath.vi"/>
 		<Item Name="FindLibraryPath.vi" Type="VI" URL="../SubVIs/FindLibraryPath.vi"/>
 		<Item Name="FindUnexpectedDepsOfLibraries.vi" Type="VI" URL="../SubVIs/FindUnexpectedDepsOfLibraries.vi"/>
 		<Item Name="Generate Hawkeye File.vi" Type="VI" URL="../SubVIs/Generate Hawkeye File.vi"/>
 		<Item Name="GenericStatusIndicator.vi" Type="VI" URL="../SubVIs/GenericStatusIndicator.vi"/>
-		<Item Name="Get Callers Cache.vi" Type="VI" URL="../SubVIs/Get Callers Cache.vi"/>
+		<Item Name="Get Cache File Details.vi" Type="VI" URL="../SubVIs/Get Cache File Details.vi"/>
+		<Item Name="Get Linker Cache.vi" Type="VI" URL="../SubVIs/Get Linker Cache.vi"/>
 		<Item Name="Get Repo Path.vi" Type="VI" URL="../SubVIs/Get Repo Path.vi"/>
 		<Item Name="GetActualDepsListPath.vi" Type="VI" URL="../SubVIs/GetActualDepsListPath.vi"/>
 		<Item Name="GetAllDepsChain.vi" Type="VI" URL="../SubVIs/GetAllDepsChain.vi"/>
@@ -47,6 +52,7 @@
 		<Item Name="GetAllLibOrphanClass.vi" Type="VI" URL="../SubVIs/GetAllLibOrphanClass.vi"/>
 		<Item Name="GetAllLVFilesForLibCheck.vi" Type="VI" URL="../SubVIs/GetAllLVFilesForLibCheck.vi"/>
 		<Item Name="GetAllLVProjects.vi" Type="VI" URL="../SubVIs/GetAllLVProjects.vi"/>
+		<Item Name="GetApprovedList.vi" Type="VI" URL="../SubVIs/GetApprovedList.vi"/>
 		<Item Name="GetDepsList.vi" Type="VI" URL="../SubVIs/GetDepsList.vi"/>
 		<Item Name="GetLVQualifiedName.vi" Type="VI" URL="../SubVIs/GetLVQualifiedName.vi"/>
 		<Item Name="HawkeyePathConfigLV2.vi" Type="VI" URL="../SubVIs/HawkeyePathConfigLV2.vi"/>
@@ -54,19 +60,22 @@
 		<Item Name="IsUserLibVI.vi" Type="VI" URL="../SubVIs/IsUserLibVI.vi"/>
 		<Item Name="LVLibNameFromFileName.vi" Type="VI" URL="../SubVIs/LVLibNameFromFileName.vi"/>
 		<Item Name="LVLibNameFromFilePath.vi" Type="VI" URL="../SubVIs/LVLibNameFromFilePath.vi"/>
+		<Item Name="Read Linker Info.vi" Type="VI" URL="../SubVIs/Read Linker Info.vi"/>
 		<Item Name="ReadChangedFileLogPaths.vi" Type="VI" URL="../SubVIs/ReadChangedFileLogPaths.vi"/>
 		<Item Name="ReadChangedLVFilesList.vi" Type="VI" URL="../SubVIs/ReadChangedLVFilesList.vi"/>
 		<Item Name="ReadExpectedDependencies.vi" Type="VI" URL="../SubVIs/ReadExpectedDependencies.vi"/>
+		<Item Name="ReadSectionCacheData.vi" Type="VI" URL="../SubVIs/ReadSectionCacheData.vi"/>
 		<Item Name="SortHawkeyeList.vi" Type="VI" URL="../SubVIs/SortHawkeyeList.vi"/>
 		<Item Name="Unclaimed LVClass Check.vi" Type="VI" URL="../SubVIs/Unclaimed LVClass Check.vi"/>
 		<Item Name="UpdateActualDepsOfLibraries.vi" Type="VI" URL="../SubVIs/UpdateActualDepsOfLibraries.vi"/>
+		<Item Name="UpdateApprovedHawkList.vi" Type="VI" URL="../SubVIs/UpdateApprovedHawkList.vi"/>
 		<Item Name="UpdateHawkeyeList.vi" Type="VI" URL="../SubVIs/UpdateHawkeyeList.vi"/>
 	</Item>
 	<Item Name="Typedefs" Type="Folder">
+		<Item Name="ApprovedDeps.ctl" Type="VI" URL="../Typedefs/ApprovedDeps.ctl"/>
+		<Item Name="ConfirmDeps.ctl" Type="VI" URL="../Typedefs/ConfirmDeps.ctl"/>
 		<Item Name="DependenciesAction.ctl" Type="VI" URL="../Typedefs/DependenciesAction.ctl"/>
-		<Item Name="DepsCheckResult.ctl" Type="VI" URL="../Typedefs/DepsCheckResult.ctl"/>
+		<Item Name="DepsFailure.ctl" Type="VI" URL="../Typedefs/DepsFailure.ctl"/>
 		<Item Name="HawkeyePathConfigs.ctl" Type="VI" URL="../Typedefs/HawkeyePathConfigs.ctl"/>
 	</Item>
-	<Item Name="Get Cache File Details.vi" Type="VI" URL="../SubVIs/Get Cache File Details.vi"/>
-	<Item Name="ReadSectionCacheData.vi" Type="VI" URL="../SubVIs/ReadSectionCacheData.vi"/>
 </Library>

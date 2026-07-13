@@ -5,7 +5,9 @@ ModuleC.lvlib = ""
 
 [ModuleD.lvclass:Indirect]
 ACComm.lvlib = ""
-FileUtilities.lvlib = ""
-GraphUtilities.lvclass = ""
 ModuleA.lvlib = ""
 StringUtilities.lvlib = ""
+Unknown = ""
+GraphUtilities.lvclass = ""
+FileUtilities.lvlib = ""
+UpdateStatus.lvlib = ""

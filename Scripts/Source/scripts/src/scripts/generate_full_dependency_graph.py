@@ -5,7 +5,7 @@ from scripts import analyze_dependencies
 
 def main():
     parser = argparse.ArgumentParser(description="Generate full dependency graph image")
-    parser.add_argument("--file", default="Source/ActualDependencies", help="Path to .adeps file or directory")
+    parser.add_argument("--file", default="Hawkeye/ActualDependencies", help="Path to .hawkeyelist file or directory")
     parser.add_argument("--output", default="reports/full_dependency_graph.png", help="Output image file path")
     args = parser.parse_args()
 

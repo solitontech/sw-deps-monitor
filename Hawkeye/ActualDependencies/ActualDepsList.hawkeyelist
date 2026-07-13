@@ -19,6 +19,7 @@ Unknown = ""
 GraphUtilities.lvclass = ""
 
 [FileUtilities.lvlib:Indirect]
+Unknown = ""
 
 [GraphUtilities.lvclass:Direct]
 
@@ -28,9 +29,12 @@ GraphUtilities.lvclass = ""
 ABComm.lvlib = ""
 ACComm.lvlib = ""
 FileUtilities.lvlib = ""
+UpdateStatus.lvlib = ""
 
 [ModuleA.lvlib:Indirect]
 GraphUtilities.lvclass = ""
+StringUtilities.lvlib = ""
+Unknown = ""
 
 [ModuleB.lvlib:Direct]
 ModuleA.lvlib = ""
@@ -41,11 +45,14 @@ ABComm.lvlib = ""
 ACComm.lvlib = ""
 FileUtilities.lvlib = ""
 GraphUtilities.lvclass = ""
+Unknown = ""
+UpdateStatus.lvlib = ""
 
 [ModuleC.lvlib:Direct]
 ACComm.lvlib = ""
 
 [ModuleC.lvlib:Indirect]
+Unknown = ""
 
 [ModuleD.lvclass:Direct]
 ABComm.lvlib = ""
@@ -58,8 +65,33 @@ FileUtilities.lvlib = ""
 GraphUtilities.lvclass = ""
 ModuleA.lvlib = ""
 StringUtilities.lvlib = ""
+Unknown = ""
+UpdateStatus.lvlib = ""
+
+[ModuleE.lvlib:Direct]
+ModuleD.lvclass = ""
+
+[ModuleE.lvlib:Indirect]
+ABComm.lvlib = ""
+ACComm.lvlib = ""
+FileUtilities.lvlib = ""
+GraphUtilities.lvclass = ""
+ModuleA.lvlib = ""
+ModuleB.lvlib = ""
+ModuleC.lvlib = ""
+StringUtilities.lvlib = ""
+Unknown = ""
+UpdateStatus.lvlib = ""
 
 [StringUtilities.lvlib:Direct]
 GraphUtilities.lvclass = ""
 
 [StringUtilities.lvlib:Indirect]
+Unknown = ""
+
+[UpdateStatus.lvlib:Direct]
+StringUtilities.lvlib = ""
+
+[UpdateStatus.lvlib:Indirect]
+GraphUtilities.lvclass = ""
+Unknown = ""

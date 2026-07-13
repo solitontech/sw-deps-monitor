@@ -1,0 +1,12 @@
+[ModuleE.lvlib:Direct]
+ModuleD.lvclass = ""
+ModuleB.lvlib = ""
+ModuleC.lvlib = ""
+
+[ModuleE.lvlib:Indirect]
+ABComm.lvlib = ""
+GraphUtilities.lvclass = ""
+ModuleA.lvlib = ""
+StringUtilities.lvlib = ""
+UpdateStatus.lvlib = ""
+Unknown = ""
